@@ -880,3 +880,49 @@ a {
         margin-left: auto;
     }
 }
+
+/* healthy */
+.healthy {
+    padding: 70px 200px;
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 60px;
+}
+
+.healthy-text {
+    color: var(--color-dark1);
+    margin-bottom: 50px;
+}
+
+/* healthy reponsive */
+@media screen and (max-width: 767.98px) {
+    .healthy {
+        display: grid;
+        grid-template-columns: 1fr;
+        padding: 140px 0;
+        gap: 6px;
+    }
+
+    .healthy-text {
+        color: var(--color-dark1);
+        margin-bottom: 50px;
+    }
+
+    .healthy-checks {
+        margin-bottom: 0;
+    }
+
+    .healthy-text {
+        margin-bottom: 30px;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+        width: 100%;
+    }
+
+    .healthy-img {
+        height: 362px;
+    }
+}
+
+@media screen and (min-width:768px) and (max-width: 1023.98px) {}
