@@ -261,11 +261,18 @@ a {
     margin: 0 auto;
 }
 
-@media screen and (max-width: 1023.98px) {
+/* @media screen and (max-width: 1023.98px) {
+    .container {
+        padding: 0 24px;
+    }
+} */
+
+@media screen and (max-width: 1279.98px) {
     .container {
         padding: 0 24px;
     }
 }
+
 
 /* header */
 .header {
@@ -326,7 +333,7 @@ a {
 
 @media screen and (min-width: 1024px) and (max-width: 1279.98px) {
     .header {
-        margin: 20px 24px 45px;
+        margin: 20px 0 45px;
     }
 }
 
@@ -526,9 +533,7 @@ a {
 
 /* hero responsive */
 @media screen and (max-width: 1279.98px) {
-    .hero {
-        padding: 0;
-    }
+
 
     .hero-top {
         gap: 15px;
@@ -553,9 +558,9 @@ a {
 }
 
 @media screen and (min-width: 1024px) and (max-width: 1279.98px) {
-    .hero {
+    /* .hero {
         padding: 24px 24px 0;
-    }
+    } */
 }
 
 @media screen and (max-width: 1023.98px) {
@@ -677,12 +682,14 @@ a {
 
 /* decare */
 .decare {
-    padding: 80px 196px 76px;
+    padding: 80px 0 76px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     gap: 118px;
+    max-width: 1047px;
+    margin: 0 auto;
 }
 
 .decare-title {
@@ -783,7 +790,7 @@ a {
 
 @media screen and (max-width: 1279.98px) {
     .decare {
-        padding: 80px 100px 76px;
+        padding: 80px 0 76px;
         gap: 70px;
     }
 
@@ -905,15 +912,9 @@ a {
 
 /* priority reponsive */
 
-@media screen and (max-width: 1279.98px) {
-    .priority {
-        padding: 70px 130px;
-    }
-}
-
 @media screen and (max-width: 1023.98px) {
     .priority {
-        padding: 50px 50px 0;
+        padding: 50px 0 0;
         gap: 9px;
     }
 
@@ -945,16 +946,12 @@ a {
 
     .priority-img {
         max-width: 327px;
-        margin: 0 auto;
     }
 }
 
-
 @media screen and (max-width: 767.98px) {
     .priority {
-        padding: 50px 0 0;
         grid-template-columns: 1fr;
-        gap: 9px;
     }
 
     .priority-title {
@@ -1008,13 +1005,6 @@ a {
 
 /* healthy reponsive */
 
-@media screen and (max-width: 1279.98px) {
-    .healthy {
-        padding: 70px 120px;
-    }
-}
-
-
 @media screen and (max-width: 1023.98px) {
     .healthy {
         padding: 140px 0 70px;
@@ -1047,7 +1037,6 @@ a {
     .healthy {
         display: grid;
         grid-template-columns: 1fr;
-        padding: 140px 0 70px;
         gap: 6px;
     }
 
@@ -1063,12 +1052,13 @@ a {
 
 /* service */
 .service {
-    padding: 70px 135px 80px;
+    padding: 70px 0 80px;
     display: flex;
     justify-content: center;
     flex-direction: column;
     gap: 86px;
     margin: 0 auto;
+    max-width: 1170px;
 }
 
 .service-top {
@@ -1151,8 +1141,9 @@ a {
 
 /* specialist */
 .specialist {
-    padding: 76px 140px 78px;
+    padding: 76px 0 78px;
     gap: 57px;
+    max-width: 1160px;
 }
 
 .specialist-top {
@@ -1245,13 +1236,6 @@ a {
 }
 
 /* specialist reponsive */
-@media screen and (max-width: 1279.98px) {
-    .specialist {
-        padding: 76px 90px 78px;
-    }
-
-}
-
 @media screen and (max-width: 1023.98px) {
     .specialist {
         padding: 0 0 60px;
@@ -1294,6 +1278,7 @@ a {
     padding: 70px 135px 99px;
     gap: 70px;
     background-color: #F2F3F8;
+    max-width: 1440px;
 }
 
 .patient-top {
@@ -1312,24 +1297,9 @@ a {
 .patient-items {
     padding: 0;
     background-color: inherit;
+    display: grid;
     gap: 50px;
-
-    /* scroll-snap */
-    grid-template-columns: unset;
-    grid-auto-flow: column;
-    grid-auto-columns: 508px;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scroll-snap-stop: always;
-}
-
-.patient-items {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-}
-
-.patient-items::-webkit-scrollbar {
-    display: none;
+    grid-template-columns: repeat(auto-fit, minmax(328px, 1fr));
 }
 
 .patient-item {
@@ -1340,9 +1310,6 @@ a {
     align-items: flex-start;
     justify-content: center;
     flex-direction: column;
-
-    /* scroll-snap */
-    scroll-snap-align: start;
 }
 
 .patient-author {
@@ -1390,12 +1357,7 @@ a {
     .patient {
         gap: 50px;
         margin: 0 -24px;
-    }
-}
-
-@media screen and (max-width: 1023.98px) {
-    .patient {
-        padding: 70px 60px 99px;
+        padding: 70px 24px 99px;
     }
 }
 
@@ -1492,11 +1454,6 @@ a {
 }
 
 /* consultation reponsive */
-@media screen and (max-width: 1279.98px) {
-    .consultation {
-        margin: -24px;
-    }
-}
 
 @media screen and (max-width: 1023.98px) {
     .consultation-title {
