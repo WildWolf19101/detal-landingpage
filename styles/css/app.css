@@ -1,5 +1,5 @@
 :root {
-    --color-primary: rgba(22, 99, 249, 1);
+    --color-primary: rgb(22, 99, 249);
     --color-secondary: rgba(245, 149, 58, 1);
     --color-dark: rgba(31, 35, 38, 1);
     --color-dark1: rgba(129, 135, 157, 1);
@@ -8,6 +8,8 @@
 
     --font-family-primary: "Poppins", sans-serif;
     --font-family-secondary: "Sora", sans-serif;
+
+    scroll-behavior: smooth;
 }
 
 body {
@@ -284,20 +286,41 @@ a {
     list-style: none;
 }
 
+.menu-link {
+    position: relative;
+}
+
+.menu-link::before {
+    content: "";
+    height: 2px;
+    width: 0px;
+    background-color: #32A9DF;
+    position: absolute;
+    bottom: -4px;
+    transition: width 0.2s linear;
+}
+
+.menu-link:hover::before {
+    width: 100%;
+}
+
 .header-button {
     padding: 18px 50px;
+    transition: all 0.2s linear;
+}
+
+.header-button:hover {
+    opacity: 0.8;
 }
 
 #menu {
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     background-color: #ffffff;
     border-radius: 10px;
     width: 30px;
     height: 30px;
-    opacity: 0;
-    visibility: hidden;
     transition: all 0.2s ease;
 }
 
@@ -314,8 +337,7 @@ a {
     }
 
     #menu {
-        opacity: 1;
-        visibility: visible;
+        display: flex;
     }
 
     .header-button,
@@ -383,6 +405,11 @@ a {
 .hero-button {
     padding: 23px 50px;
     flex-shrink: 0;
+    transition: all 0.2s linear;
+}
+
+.hero-button:hover {
+    opacity: 0.8;
 }
 
 .bottom-items {
@@ -412,12 +439,9 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-}
 
-.hero-img {
-    height: 681px;
     max-width: 571px;
-    object-fit: cover;
+    width: 100%;
 }
 
 .hero-image-micpro {
@@ -629,7 +653,7 @@ a {
 
 .card-item:hover {
     box-shadow: 0px 20px 80px -16px rgba(35, 35, 35, 0.1);
-    border: 0;
+    border: var(--color-white);
 }
 
 /* card reponsive */
@@ -1130,11 +1154,13 @@ a {
 }
 
 .specialist-items {
+    max-width: 1170px;
+    width: 100%;
     border-radius: 0;
     padding: 0;
     gap: 40px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
 }
 
 .specialist-item {
@@ -1143,12 +1169,19 @@ a {
     background-color: var(--color-white);
     padding: 21px 20px 23px;
     align-items: center;
+    transition: all 0.2s linear;
+}
+
+.specialist-item:hover {
+    border: 1px solid var(--color-dark1);
+
 }
 
 .specialist-image {
-    height: 370px;
-    width: 100%;
-    object-fit: contain;
+    /* height: 370px;
+    width: 100%; */
+    object-fit: cover;
+    object-position: top;
     border-radius: inherit;
 }
 
@@ -1203,6 +1236,11 @@ a {
 .specialist-button {
     padding: 12px 50px;
     font-weight: 500;
+    transition: all 0.2s linear;
+}
+
+.specialist-button:hover {
+    opacity: 0.8;
 }
 
 .color-dark {
@@ -1222,15 +1260,11 @@ a {
 
     .specialist-items {
         gap: 30px;
-        display: grid;
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .specialist-item {
         padding: 16px 16px 23px;
-    }
-
-    .specialist-item:last-child {
-        display: none;
     }
 }
 
@@ -1239,10 +1273,7 @@ a {
     .specialist-items {
         gap: 30px;
         padding: 0;
-    }
-
-    .specialist-item:nth-child(n + 2) {
-        display: none;
+        grid-template-columns: 1fr;
     }
 }
 
@@ -1415,6 +1446,11 @@ a {
     border-radius: 10px;
     padding: 16px;
     background-color: #ffffff;
+    transition: all 0.2s linear;
+}
+
+.consultation-button:hover {
+    opacity: 0.8;
 }
 
 .consultation-icon {
@@ -1520,16 +1556,16 @@ a {
 
 .input {
     margin-bottom: 28px;
+    display: flex;
+    justify-content: space-between;
     border-radius: 8px;
     border: 1px solid #f0f0f0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .input-email {
-    padding: 15px 18px;
+    padding: 0 18px;
     border: 0;
+    width: 100%;
 }
 
 ::-webkit-input-placeholder {
@@ -1550,6 +1586,7 @@ a {
     border-top-right-radius: 7px;
     border-bottom-right-radius: 7px;
     transition: all 0.2s linear;
+    flex-shrink: 0;
 }
 
 .button-confirm:hover {
